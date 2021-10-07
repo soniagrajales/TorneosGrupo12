@@ -1,0 +1,34 @@
+﻿@page
+@model Frontend.Pages.CColegioArbitro.IndexModel
+@{
+   ViewData["Title"]="Index";
+}
+
+<h1> Lista de Colegio de Árbitros </h1>
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Crear Colegio de Árbitros</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>NIT</th>
+            <th>Dirección </th>
+            <th>Correo </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var col in Model.ColegioArbitros)
+        {
+            <tr>
+                <td>@col.Nit </td>
+                <td>@col.Direccion </td>
+                <td>@col.Correo </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@col.Id" class="btn btn-primary">Editar</a>
+                    <a asp-page="./Details" asp-route-id="@col.Id" class="btn btn-success">Detalles</a>
+                    <a asp-page="./Delete" asp-route-id="@col.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>  
+</table>

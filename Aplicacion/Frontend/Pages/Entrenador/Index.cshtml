@@ -1,0 +1,38 @@
+﻿@page
+@model Frontend.Pages.CEntrenador.IndexModel
+@{
+    ViewData["Title"]="Index";
+}
+
+<h1> Lista de Entrenadores </h1>
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Crear Entrenador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Documento</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Genero</th>
+            <th>Equipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ent in Model.EntrenadoresV)
+        {
+            <tr>
+                <td>@ent.Documento</td>
+                <td>@ent.Nombres</td>
+                <td>@ent.Apellidos</td>
+                <td>@ent.Genero</td>
+                <td>@ent.Equipo</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@ent.Id" class="btn btn-primary">Editar</a>
+                    <a asp-page="./Details" asp-route-id="@ent.Id" class="btn btn-success">Detalles</a>
+                    <a asp-page="./Delete" asp-route-id="@ent.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>  
+</table>
