@@ -1,0 +1,39 @@
+﻿@page
+@model Frontend.Pages.CColegioArbitro.DetailsModel
+@{
+    ViewData["Title"]="Details";
+}
+<h1>Detalles del Colegio de Árbitros</h1>
+
+<div class="form-horizontal">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <input type="hidden" asp-for="ColegioArbitro.Id" />
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Nit" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Nit" class="form-control" readonly/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Resolucion" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Resolucion" class="form-control" readonly/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Direccion" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Direccion" class="form-control" readonly/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Telefono" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Telefono" class="form-control" readonly/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Correo" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Correo" class="form-control" readonly/>
+                </div>                
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
