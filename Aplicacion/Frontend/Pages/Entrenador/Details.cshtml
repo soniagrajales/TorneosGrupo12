@@ -1,4 +1,41 @@
 ﻿@page
 @model Frontend.Pages.CEntrenador.DetailsModel
 @{
+  ViewData["Title"]="Details";
 }
+<h1>Detalles de Entrenador</h1>
+<div class="form-horizontal">
+    <div class="row">
+        <div class="col-md-4">
+                <input type="hidden" asp-for="Entrenador.Id" />
+                <div class="form-group">
+                    <label asp-for="Entrenador.Documento" class="control-label" > </label>
+                    <input asp-for="Entrenador.Documento" class="form-control" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Entrenador.Nombres" class="control-label" > </label>
+                    <input asp-for="Entrenador.Nombres" class="form-control" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Entrenador.Apellidos" class="control-label" > </label>
+                    <input asp-for="Entrenador.Apellidos" class="form-control" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Entrenador.Genero" class="control-label" > </label>
+                    <input asp-for="Entrenador.Genero" class="form-control" readonly/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" >Equipo</label>
+                    <input asp-for="Equipo.Nombre" class="form-control" readonly/>
+                </div>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+

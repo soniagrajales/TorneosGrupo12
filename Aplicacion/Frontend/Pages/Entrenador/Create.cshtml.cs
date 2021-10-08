@@ -40,7 +40,7 @@ namespace Frontend.Pages.CEntrenador
             else
             {
                 Equipos=_repoeq.ListarEquipos();
-                ViewData["Error"]="el equipo ya se encuentra registrado";
+                ViewData["Error"]="el entrenador ya se encuentra registrado";
                 return Page();
             }
         }

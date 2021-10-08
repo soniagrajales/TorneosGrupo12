@@ -42,14 +42,14 @@ namespace Frontend.Pages.CEquipo
 
         public ActionResult OnPost()
         {
-        bool funciono=_repoeq.EliminarEquipo(Equipo.Id);
+            bool funciono=_repoeq.EliminarEquipo(Equipo.Id);
             if(funciono)
             {
                 return RedirectToPage("./Index");
             }
             else
             {
-                ViewData["Error"]="El torneo ya existe";
+                ViewData["Error"]="No se puede eliminar el equipo";
                 return Page();
             }
         }
