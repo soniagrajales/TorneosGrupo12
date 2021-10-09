@@ -1,0 +1,95 @@
+﻿@page
+@model Frontend.Pages.CDeportista.DeleteModel
+@{
+    ViewData["Title"]= "Delete";
+}
+
+<h1>Eliminar Deportista </h1>
+<h2 class="text-danger">@ViewData["Mensaje"]</h2>
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Deportista.Id" />
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Documento" class="control-label"></label>
+                    <input asp-for="Deportista.Documento" class="form-control" readonly>
+                    <span asp-validation-for="Deportista.Documento" class="text-danger"></span> 
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Deportista.Nombres" class="control-label"></label>
+                    <input asp-for="Deportista.Nombres" class="form-control" readonly>
+                    <span asp-validation-for="Deportista.Nombres" class="text-danger"></span> 
+                </div>
+               
+                <div class="form-group">
+                    <label asp-for="Deportista.Apellidos" class="control-label"></label>
+                    <input asp-for="Deportista.Apellidos" class="form-control" readonly>
+                    <span asp-validation-for="Deportista.Apellidos" class="text-danger"></span> 
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Deportista.Direccion" class="control-label"></label>
+                    <input asp-for="Deportista.Direccion" class="form-control" readonly>
+                    <span asp-validation-for="Deportista.Direccion" class="text-danger"></span> 
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Deportista.Celular" class="control-label"></label>
+                    <input asp-for="Deportista.Celular" class="form-control" readonly>
+                    <span asp-validation-for="Deportista.Celular" class="text-danger"></span> 
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Genero" class="control-label"></label>
+                    <input asp-for="Deportista.Genero" class="form-control" readonly>
+                     <span asp-validation-for="Deportista.Genero" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Rh" class="control-label"></label>
+                    <input asp-for="Deportista.Rh" class="form-control" readonly>
+                     <span asp-validation-for="Deportista.Rh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Disciplina" class="control-label"></label>
+                    <input asp-for="Deportista.Disciplina" class="form-control" readonly>
+                     <span asp-validation-for="Deportista.Disciplina" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.NumeroEmergencia" class="control-label"></label>
+                    <input asp-for="Deportista.NumeroEmergencia" class="form-control" readonly>
+                     <span asp-validation-for="Deportista.NumeroEmergencia" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.FechaNacimiento" class="control-label"></label>
+                    <input asp-for="Deportista.FechaNacimiento" class="form-control" readonly>
+                     <span asp-validation-for="Deportista.FechaNacimiento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Equipo.Nombre" class="control-label"></label>
+                    <input asp-for="Equipo.Nombre" class="form-control" readonly/>                                            
+                </div>
+                <div class="form-group"> 
+                  <button type="submit" class="btn btn-primary">Eliminar</button>
+                </div>                
+               
+            </form>               
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index"> Back to List</a>
+    </div> 
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

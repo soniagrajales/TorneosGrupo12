@@ -1,0 +1,95 @@
+﻿@page
+@model Frontend.Pages.CDeportista.EditModel
+@{
+    ViewData["Title"]="Edit";
+}
+
+<h1>Editar Deportista</h1>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div> </div>
+                <input type="hidden" asp-for="Deportista.Id" />
+                <div class="form-group">
+                    <label asp-for="Deportista.Documento" class="control-label" > </label>
+                    <input asp-for="Deportista.Documento" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Nombres" class="control-label" > </label>
+                    <input asp-for="Deportista.Nombres" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Apellidos" class="control-label" > </label>
+                    <input asp-for="Deportista.Apellidos" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Direccion" class="control-label" > </label>
+                    <input asp-for="Deportista.Direccion" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Celular" class="control-label" > </label>
+                    <input asp-for="Deportista.Celular" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Genero" class="control-label" > </label>
+                    <input asp-for="Deportista.Genero" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Rh" class="control-label" > </label>
+                    <input asp-for="Deportista.Rh" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.EPS" class="control-label" > </label>
+                    <input asp-for="Deportista.EPS" class="form-control" />                       
+                   
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.Disciplina" class="control-label" > </label>
+                    <input asp-for="Deportista.Disciplina" class="form-control" />    
+                </div>
+
+                <div class="form-group">
+                     <label asp-for="Deportista.NumeroEmergencia" class="control-label" > </label>
+                    <input asp-for="Deportista.NumeroEmergencia" class="form-control" />    
+                </div>
+
+                <div class="form-group">
+                     <label asp-for="Deportista.FechaNacimiento" class="control-label" > </label>
+                    <input asp-for="Deportista.FechaNacimiento" class="form-control" />    
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Deportista.EquipoId" class="control-label" > </label>
+                    <select asp-for="Deportista.EquipoId" class="form-control" >
+                        <option value="">-- Seleccione un equipo --</option>
+                        @foreach (var muni in Model.Equipos)
+                        {
+                            <option value="@muni.Id"> @muni.Nombre</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                <div class="form-group"> 
+                    <input type="submit" value="Editar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
