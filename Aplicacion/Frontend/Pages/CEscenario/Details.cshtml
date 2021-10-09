@@ -1,0 +1,47 @@
+﻿@page
+@model Frontend.Pages.CEscenario.DetailsModel
+@{
+    ViewData["Title"]="Details";
+}
+
+<h1>Detalles del Escenario</h1>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div> </div>
+                <input type="hidden" asp-for="Escenario.Id" />
+                <div class="form-group">
+                    <label asp-for="Escenario.Nombre" class="control-label" > </label>
+                    <input asp-for="Escenario.Nombre" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Escenario.Direcion" class="control-label" > </label>
+                    <input asp-for="Escenario.Direcion" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Escenario.Telefono" class="control-label" > </label>
+                    <input asp-for="Escenario.Telefono" class="form-control" readonly />                       
+                   
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Torneo.Nombre" class="control-label" > </label>
+                    <input asp-for="Torneo.Nombre" class="form-control" readonly />
+                        
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

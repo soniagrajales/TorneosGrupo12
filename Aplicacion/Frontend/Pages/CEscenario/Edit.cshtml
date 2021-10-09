@@ -1,0 +1,55 @@
+﻿@page
+@model Frontend.Pages.CEscenario.EditModel
+@{
+    ViewData["Title"]="Edit";
+}
+
+<h1>Editar Escenario</h1>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div> </div>
+                <input type="hidden" asp-for="Escenario.Id" />
+                <div class="form-group">
+                    <label asp-for="Escenario.Nombre" class="control-label" > </label>
+                    <input asp-for="Escenario.Nombre" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Escenario.Direcion" class="control-label" > </label>
+                    <input asp-for="Escenario.Direcion" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Escenario.Telefono" class="control-label" > </label>
+                    <input asp-for="Escenario.Telefono" class="form-control" />                       
+                   
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Escenario.TorneoId" class="control-label" > </label>
+                    <select asp-for="Escenario.TorneoId" class="form-control" >
+                        <option value="">-- Seleccione un torneo --</option>
+                        @foreach (var tor in Model.Torneos)
+                        {
+                            <option value="@tor.Id"> @tor.Nombre</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                <div class="form-group"> 
+                    <input type="submit" value="Editar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
