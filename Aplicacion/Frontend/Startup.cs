@@ -31,7 +31,12 @@ namespace Frontend
             services.AddScoped<IRColegioArbitro, RColegioArbitro>();
             services.AddScoped<IRTorneo, RTorneo>();
             services.AddScoped<IREquipo, REquipo>();
+            services.AddScoped<IREscenario, REscenario>();
+            services.AddScoped<IRCancha, RCancha>();
             services.AddScoped<IREntrenador, REntrenador>();
+            services.AddScoped<IRDeportista, RDeportista>();
+            services.AddScoped<IRArbitro, RArbitro>();
+
             services.AddDbContext<Persistencia.AppContext>();
         }
 
