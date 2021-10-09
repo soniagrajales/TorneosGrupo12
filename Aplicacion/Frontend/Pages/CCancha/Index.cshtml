@@ -1,0 +1,38 @@
+﻿@page
+@model Frontend.Pages.CCancha.IndexModel
+@{
+    ViewData["Title"]="Index";
+}
+
+<h1> Lista de Canchas </h1>
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Crear Cancha</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Disciplina</th>
+            <th>Capacidad Espectadores</th>
+            <th>Escenario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var esc in Model.CanchasV)
+        {
+            <tr>
+                <td>@esc.Nombre </td>
+                <td>@esc.Disciplina </td>
+                <td>@esc.CapacidadEsp </td>
+                <td>@esc.Escenario </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@esc.Id" class="btn btn-primary">Editar</a>
+                    <a asp-page="./Details" asp-route-id="@esc.Id" class="btn btn-success">Detalles</a>
+                    <a asp-page="./Delete" asp-route-id="@esc.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>  
+</table>
+
+
