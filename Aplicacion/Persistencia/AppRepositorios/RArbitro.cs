@@ -4,18 +4,18 @@ using System.Linq;
 
 namespace Persistencia
 {
-    public class RTorneo:IRTorneo
+    public class RArbitro:IRArbitro
     {
         // Atributos de clase
         private readonly AppContext _appContext;
 
         //Metodos de clase
         //Constructor
-        public RTorneo(AppContext appContext)
+        public RArbitro(AppContext appContext)
         {
             _appContext=appContext;
         }
-        public bool CrearTorneo(Torneo obj)
+        public bool CrearArbitro(Arbitro obj)
         {
             bool adicionado= false;
             bool valido= ValidarNombre(obj);
@@ -23,7 +23,7 @@ namespace Persistencia
             {
                 try
                 {
-                    _appContext.Torneos.Add(obj);
+                    _appContext.Arbitros.Add(obj);
                     _appContext.SaveChanges();
                     adicionado=true;
                 }
@@ -35,15 +35,15 @@ namespace Persistencia
             }
             return adicionado;
         }
-        public bool EliminarTorneo(int id)
+        public bool EliminarArbitro(int id)
         {
             bool eliminado=false;
-            var tor=_appContext.Torneos.Find(id);
+            var tor=_appContext.Arbitros.Find(id);
             if(tor!=null)
             {
                 try
                 {
-                     _appContext.Torneos.Remove(tor);
+                     _appContext.Arbitros.Remove(tor);
                      _appContext.SaveChanges();
                      eliminado=true;
                 }
@@ -54,28 +54,30 @@ namespace Persistencia
             }
             return eliminado;
         }
-        public Torneo BuscarTorneo(int id)
+        public Arbitro BuscarArbitro(int id)
         {
-            Torneo obj = _appContext.Torneos.Find(id);
+            Arbitro obj = _appContext.Arbitros.Find(id);
             return obj;
         }
-        public bool ActualizarTorneo(Torneo obj)
+        public bool ActualizarArbitro(Arbitro obj)
         {
             bool actualizado= false;
             //bool valido= ValidarIdentificacion(obj);
             //if(valido)
            // {
-                var tor= _appContext.Torneos.Find(obj.Id);
+                var tor= _appContext.Arbitros.Find(obj.Id);
                 if(tor!=null)
                 {
                     try
                     {
-                        tor.Nombre=obj.Nombre;
-                        tor.Categoria=obj.Categoria;
-                        tor.FechaInicial=obj.FechaFinal;
-                        tor.FechaFinal=obj.FechaFinal;
-                        tor.Horario=obj.Horario;
-                        tor.MunicipioId=obj.MunicipioId;
+                        tor.Documento=obj.Documento;
+                        tor.Nombres=obj.Nombres;
+                        tor.Apellidos=obj.Apellidos;
+                        tor.Celular=obj.Celular;
+                        tor.Genero=obj.Genero;
+                        tor.Disciplina=obj.Disciplina;
+                        tor.TorneoId=obj.TorneoId;
+                        tor.ColegioArbitroId=obj.ColegioArbitroId;
                         _appContext.SaveChanges();
                         actualizado=true;
                     }
@@ -89,14 +91,14 @@ namespace Persistencia
             
             return actualizado;
         }
-        public IEnumerable<Torneo> ListarTorneos()
+        public IEnumerable<Arbitro> ListarArbitros()
         {
-            return _appContext.Torneos;
+            return _appContext.Arbitros;
         }
-        bool ValidarNombre(Torneo obj)
+        bool ValidarNombre(Arbitro obj)
         {
             bool valido= true;
-            var tor = _appContext.Torneos.FirstOrDefault(t=>t.Nombre==obj.Nombre);
+            var tor = _appContext.Arbitros.FirstOrDefault(t=>t.Nombres==obj.Nombres);
             if(tor!=null)
             {
                 valido=false;
@@ -104,11 +106,14 @@ namespace Persistencia
             return valido;
 
         }
-        
-        List<Torneo> IRTorneo.ListarTorneos1()
+
+        List<Arbitro> IRArbitro.ListarArbitros1()
         {
-            return _appContext.Torneos.ToList();
+            return _appContext.Arbitros.ToList();
         }
+
+        
+
     }
     
 }

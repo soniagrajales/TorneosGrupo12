@@ -1,0 +1,80 @@
+﻿@page
+@model Frontend.Pages.CArbitro.CreateModel
+@{
+    ViewData["Title"]="Create";
+}
+
+<h1>Crear Arbitro</h1>
+<h2 class="text-danger"> @ViewData["Error"]</h2>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div> </div>
+                <div class="form-group">
+                    <label asp-for="Arbitro.Documento" class="control-label" > </label>
+                    <input asp-for="Arbitro.Documento" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Nombres" class="control-label" > </label>
+                    <input asp-for="Arbitro.Nombres" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Apellidos" class="control-label" > </label>
+                    <input asp-for="Arbitro.Apellidos" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Celular" class="control-label" > </label>
+                    <input asp-for="Arbitro.Celular" class="form-control" />    
+                </div>
+
+                <div class="form-group">
+                     <label asp-for="Arbitro.Genero" class="control-label" > </label>
+                    <input asp-for="Arbitro.Genero" class="form-control" />    
+                </div>
+                
+                <div class="form-group">
+                     <label asp-for="Arbitro.Disciplina" class="control-label" > </label>
+                    <input asp-for="Arbitro.Disciplina" class="form-control" />    
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Arbitro.TorneoId" class="control-label" >Torneo</label>
+                    <select asp-for="Arbitro.TorneoId" class="form-control" >
+                        <option value="">-- Seleccione un torneo --</option>
+                        @foreach (var muni in Model.Torneos)
+                        {
+                            <option value="@muni.Id"> @muni.Nombre</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.ColegioArbitroId" class="control-label" >Colegio Árbitro</label>
+                    <select asp-for="Arbitro.ColegioArbitroId" class="form-control" >
+                        <option value="">-- Seleccione un colegio de árbitros --</option>
+                        @foreach (var muni in Model.ColegioArbitros)
+                        {
+                            <option value="@muni.Id"> @muni.Nit</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                <div class="form-group"> 
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,68 @@
+﻿@page
+@model Frontend.Pages.CArbitro.DetailsModel
+@{
+    ViewData["Title"]="Details";
+}
+
+<h1>Detalles del Arbitro</h1>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div> </div>
+                <input type="hidden" asp-for="Arbitro.Id" />
+                <div class="form-group">
+                    <label asp-for="Arbitro.Documento" class="control-label" > </label>
+                    <input asp-for="Arbitro.Documento" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Nombres" class="control-label" > </label>
+                    <input asp-for="Arbitro.Nombres" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Apellidos" class="control-label" > </label>
+                    <input asp-for="Arbitro.Apellidos" class="form-control" readonly />
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Arbitro.Celular" class="control-label" > </label>
+                    <input asp-for="Arbitro.Celular" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Arbitro.Genero" class="control-label" > </label>
+                    <input asp-for="Arbitro.Genero" class="form-control" readonly />                       
+                   
+                </div>
+
+                <div class="form-group">
+                     <label asp-for="Arbitro.Disciplina" class="control-label" > </label>
+                    <input asp-for="Arbitro.Disciplina" class="form-control" readonly />    
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Torneo.Nombre" class="control-label" > </label>
+                    <input asp-for="Torneo.Nombre" class="form-control" readonly />
+                        
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ColegioArbitro.Nit" class="control-label" > </label>
+                    <input asp-for="ColegioArbitro.Nit" class="form-control" readonly />
+                        
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
