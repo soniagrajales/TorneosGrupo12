@@ -16,6 +16,7 @@ namespace Frontend.Pages.CArbitro
         private readonly IRTorneo _repotor;
         private readonly IRColegioArbitro _repocol;
 
+        //Crear
         public CreateModel(IRArbitro repoarb, IRTorneo repotor, IRColegioArbitro repocol)
         {
             this._repoarb=repoarb;
