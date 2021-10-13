@@ -11,10 +11,8 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Documento</th>
             <th>Nombres</th>
             <th>Apellidos</th>
-            <th>Genero</th>
             <th>Equipo</th>
         </tr>
     </thead>
@@ -22,10 +20,9 @@
         @foreach (var ent in Model.EntrenadoresV)
         {
             <tr>
-                <td>@ent.Documento</td>
+
                 <td>@ent.Nombres</td>
                 <td>@ent.Apellidos</td>
-                <td>@ent.Genero</td>
                 <td>@ent.Equipo</td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@ent.Id" class="btn btn-primary">Editar</a>
