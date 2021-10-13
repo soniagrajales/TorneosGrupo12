@@ -16,5 +16,6 @@ namespace Dominio
         // llave foránea de ColegioArbitro
         public int ColegioArbitroId {get;set;}
         // prueba sincronizacion
+        // prueba sincronizacion 2
     }
 }
