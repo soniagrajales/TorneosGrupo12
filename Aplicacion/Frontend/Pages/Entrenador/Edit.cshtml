@@ -3,7 +3,7 @@
 @{
     ViewData["Title"]="Edit";
 }
-<h1>Editar Equipo</h1>
+<h1>Editar Entrenador</h1>
 <h2 class="text-danger">@ViewData["Error"] </h2>
 <div class="form-horizontal">
     <div class="row">
@@ -27,7 +27,12 @@
 
                 <div class="form-group">
                     <label asp-for="Entrenador.Genero" class="control-label" > </label>
-                    <input asp-for="Entrenador.Genero" class="form-control" />
+                    <select asp-for="Entrenador.Genero" class="form-control" >
+                        <option value="">--- Seleccione ---</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
