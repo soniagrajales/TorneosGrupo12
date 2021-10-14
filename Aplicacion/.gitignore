@@ -4,6 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 Dominio/bin/
+Consola/bin/
+Consola/obj/
 
 # User-specific files
 *.rsuser
