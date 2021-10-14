@@ -1,0 +1,32 @@
+﻿@page
+@model Frontend.Pages.CInscribirEquipo.IndexModel
+@{
+    ViewData["Title"]="Index";
+}
+
+<h1> Listado de equipos en torneos </h1>
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Inscribir equipo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Torneo</th>
+            <th>Equipo</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TorneoEquiposV)
+        {
+            <tr>
+                <td>@item.Torneo</td>
+                <td>@item.Equipo </td>
+                
+                <td>                   
+                    <a asp-page="./Delete" asp-route-id="@item.TorneoId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>  
+</table>
+

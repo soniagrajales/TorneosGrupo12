@@ -36,7 +36,8 @@ namespace Frontend
             services.AddScoped<IREntrenador, REntrenador>();
             services.AddScoped<IRDeportista, RDeportista>();
             services.AddScoped<IRArbitro, RArbitro>();
-
+            services.AddScoped<IRTorneoEquipo, RTorneoEquipo>();
+            //Registro del contexto
             services.AddDbContext<Persistencia.AppContext>();
         }
 
