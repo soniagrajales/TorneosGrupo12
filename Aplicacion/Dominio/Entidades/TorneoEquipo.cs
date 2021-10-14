@@ -8,6 +8,7 @@ namespace Dominio
     {
         public int EquipoId {get;set;}
         public int TorneoId {get;set;}
+        public int Posicion {get;set;}
         // crear propiedad navigacional hacia la tabla Equipo
         public Equipo Equipo{get;set;}
          // crear propiedad navigacional hacia la tabla Torneo
