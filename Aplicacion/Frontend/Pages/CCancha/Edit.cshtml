@@ -11,16 +11,18 @@
     <div class="row">
         <div class="col-md-4">
             <form method="post">
-                <div> </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
                 <input type="hidden" asp-for="Cancha.Id" />
                 <div class="form-group">
                     <label asp-for="Cancha.Nombre" class="control-label" > </label>
                     <input asp-for="Cancha.Nombre" class="form-control" readonly />
+                    <span asp-validation-for="Cancha.Nombre" class="text-danger"> </span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Cancha.Disciplina" class="control-label" > </label>
                     <input asp-for="Cancha.Disciplina" class="form-control" />
+                    <span asp-validation-for="Cancha.Disciplina" class="text-danger"> </span>
                 </div>
 
                 <div class="form-group">

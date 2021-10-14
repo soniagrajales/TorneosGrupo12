@@ -30,6 +30,11 @@ namespace Frontend.Pages.CPatrocinador
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
             bool creado=_repopat.CrearPatrocinador(Patrocinador);
             if(creado)
             {

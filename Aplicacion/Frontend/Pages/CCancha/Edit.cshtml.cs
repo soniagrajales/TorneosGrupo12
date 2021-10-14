@@ -39,6 +39,12 @@ namespace Frontend.Pages.CCancha
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
+
             bool funciono=_repocan.ActualizarCancha(Cancha);
             if(funciono)
             {

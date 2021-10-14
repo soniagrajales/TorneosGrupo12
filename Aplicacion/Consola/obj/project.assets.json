@@ -1512,6 +1512,9 @@
       "Dominio/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
         "compile": {
           "bin/placeholder/Dominio.dll": {}
         },
@@ -5796,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sonia\\.nuget\\packages\\": {}
+    "C:\\Users\\FAMILIA ORTIZ\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProyectoTorneos\\Aplicacion\\Consola\\Consola.csproj",
+      "projectUniqueName": "C:\\TorneosGrupo12\\Aplicacion\\Consola\\Consola.csproj",
       "projectName": "Consola",
-      "projectPath": "C:\\ProyectoTorneos\\Aplicacion\\Consola\\Consola.csproj",
-      "packagesPath": "C:\\Users\\sonia\\.nuget\\packages\\",
-      "outputPath": "C:\\ProyectoTorneos\\Aplicacion\\Consola\\obj\\",
+      "projectPath": "C:\\TorneosGrupo12\\Aplicacion\\Consola\\Consola.csproj",
+      "packagesPath": "C:\\Users\\FAMILIA ORTIZ\\.nuget\\packages\\",
+      "outputPath": "C:\\TorneosGrupo12\\Aplicacion\\Consola\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sonia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\FAMILIA ORTIZ\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5819,8 +5822,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\ProyectoTorneos\\Aplicacion\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\ProyectoTorneos\\Aplicacion\\Persistencia\\Persistencia.csproj"
+            "C:\\TorneosGrupo12\\Aplicacion\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\TorneosGrupo12\\Aplicacion\\Persistencia\\Persistencia.csproj"
             }
           }
         }

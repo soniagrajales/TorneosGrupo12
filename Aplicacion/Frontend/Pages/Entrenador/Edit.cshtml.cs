@@ -39,6 +39,11 @@ namespace Frontend.Pages.CEntrenador
         }
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
             bool funciono=_repoent.ActualizarEntrenador(Entrenador);
             if(funciono)
             {

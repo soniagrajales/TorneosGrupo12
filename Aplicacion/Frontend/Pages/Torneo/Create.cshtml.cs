@@ -33,6 +33,11 @@ namespace Frontend.Pages.CTorneo
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
             bool funciono=_repotor.CrearTorneo(Torneo);
             if(funciono)
             {

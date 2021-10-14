@@ -12,20 +12,23 @@
     <div class="row">
         <div class="col-md-4">
             <form method="post">
-                <div> </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
                 <div class="form-group">
                     <label asp-for="Escenario.Nombre" class="control-label" > </label>
                     <input asp-for="Escenario.Nombre" class="form-control" />
+                    <span asp-validation-for="Escenario.Nombre" class="text-danger"> </span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Escenario.Direcion" class="control-label" > </label>
                     <input asp-for="Escenario.Direcion" class="form-control" />
+                    <span asp-validation-for="Escenario.Direcion" class="text-danger"> </span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Escenario.Telefono" class="control-label" > </label>
-                    <input asp-for="Escenario.Telefono" class="form-control" />                       
+                    <input asp-for="Escenario.Telefono" class="form-control" />
+                    <span asp-validation-for="Escenario.Telefono" class="text-danger"> </span>                       
                    
                 </div>
                 

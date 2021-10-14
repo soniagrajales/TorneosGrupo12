@@ -35,6 +35,11 @@ namespace Frontend.Pages.CPatrocinador
         }
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
             bool funciono=_repopat.ActualizarPatrocinador(Patrocinador);
             if(funciono)
             {
