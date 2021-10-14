@@ -1,0 +1,52 @@
+﻿@page
+@model Frontend.Pages.CInscribirEquipo.CreateModel
+@{
+    ViewData["Title"]="Create";
+}
+
+<h1>Inscribir Equipo</h1>
+<h2 class="text-danger"> @ViewData["Error"]</h2>
+
+<div class="form-horizontal">
+   
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"> </div>               
+
+                <div class="form-group">
+                    <label asp-for="TorneoEquipo.TorneoId" class="control-label" > </label>
+                    <select asp-for="TorneoEquipo.TorneoId" class="form-control" >
+                        <option value="">-- Seleccione un torneo--</option>
+                        @foreach (var tor in Model.Torneos)
+                        {
+                            <option value="@tor.Id"> @tor.Nombre</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="TorneoEquipo.EquipoId" class="control-label" > </label>
+                    <select asp-for="TorneoEquipo.EquipoId" class="form-control" >
+                        <option value="">-- Seleccione un torneo--</option>
+                        @foreach (var equ in Model.Equipos)
+                        {
+                            <option value="@equ.Id"> @equ.Nombre</option>                                                        
+                        }
+                    </select>    
+                </div>
+
+                <div class="form-group"> 
+                    <input type="submit" value="Inscribir Equipo" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-page="Index">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
