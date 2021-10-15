@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Dominio;
 using Persistencia;
+//comentariouno
 
 namespace Frontend.Pages.CArbitro
 {
@@ -38,6 +39,12 @@ namespace Frontend.Pages.CArbitro
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
+
             bool funciono=_repoarb.CrearArbitro(Arbitro);
             if(funciono)
             {

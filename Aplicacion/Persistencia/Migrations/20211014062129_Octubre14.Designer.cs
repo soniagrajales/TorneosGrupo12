@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20211014062129_Octubre14")]
+    partial class Octubre14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -383,9 +385,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TorneoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Posicion")
                         .HasColumnType("int");
 
                     b.HasKey("EquipoId", "TorneoId");

@@ -39,6 +39,12 @@ namespace Frontend.Pages.CEscenario
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
+
             bool funciono=_repoesc.ActualizarEscenario(Escenario);
             if(funciono)
             {

@@ -29,6 +29,12 @@ namespace Frontend.Pages.CColegioArbitro
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
+
             bool creado=_repocol.CrearColegioArbitro(ColegioArbitro);
             if(creado)
             {

@@ -44,6 +44,12 @@ namespace Frontend.Pages.CArbitro
 
         public ActionResult OnPost()
         {
+            // validar los datos que llegan del formulario
+            if(!ModelState.IsValid)
+             {
+                 return Page();
+             }
+
             bool funciono=_repoarb.ActualizarArbitro(Arbitro);
             if(funciono)
             {

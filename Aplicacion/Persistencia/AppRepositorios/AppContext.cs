@@ -23,7 +23,8 @@ namespace Persistencia
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=EventosDepEq1");
+                //optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=EventosDepEq1");
+                optionsBuilder.UseSqlServer("Server=tcp:misiontic2021.database.windows.net,1433;Initial Catalog=EventosDepEq1;Persist Security Info=False;User ID=mision-tic;Password=EventosDepEq1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

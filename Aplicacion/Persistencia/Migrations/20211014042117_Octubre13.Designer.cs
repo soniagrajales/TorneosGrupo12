@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20211014042117_Octubre13")]
+    partial class Octubre13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,8 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Genero")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Nombres")
                         .IsRequired()
@@ -77,6 +80,7 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<int>("CapacidadEsp")
+                        .HasMaxLength(5)
                         .HasColumnType("int");
 
                     b.Property<string>("Disciplina")
@@ -119,7 +123,8 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Resolucion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Telefono")
                         .IsRequired()
@@ -172,7 +177,8 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Genero")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Nombres")
                         .IsRequired()
@@ -217,7 +223,8 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("Genero")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Nombres")
                         .IsRequired()
@@ -334,7 +341,8 @@ namespace Persistencia.Migrations
 
                     b.Property<string>("TipoPersona")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
 
@@ -383,9 +391,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TorneoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Posicion")
                         .HasColumnType("int");
 
                     b.HasKey("EquipoId", "TorneoId");
