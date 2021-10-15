@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
-namespace Persistencia.Migrations
+namespace Persistencia.Migrations 
 {
     [DbContext(typeof(AppContext))]
     [Migration("20211013224944_TorneoEquipo-Agregar-Posicion")]
