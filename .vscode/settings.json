@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/424b8c09-fbbc-4f2e-a5c2-0bc2435433f1/resourceGroups/MisionTIC2022/providers/Microsoft.Web/sites/torneosgrupo12",
+    "appService.deploySubpath": "Aplicacion\\Frontend\\publish"
+}
