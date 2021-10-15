@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
-namespace Persistencia.Migrations
+namespace Persistencia.Migrations 
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20211013224944_TorneoEquipo-Agregar-Posicion")]
+    partial class TorneoEquipoAgregarPosicion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,35 +29,25 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Apellidos")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Celular")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ColegioArbitroId")
                         .HasColumnType("int");
 
                     b.Property<string>("Disciplina")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documento")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Genero")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombres")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TorneoId")
                         .HasColumnType("int");
@@ -80,17 +72,13 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Disciplina")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EscenarioId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -113,16 +101,12 @@ namespace Persistencia.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nit")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Resolucion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -138,31 +122,22 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Apellidos")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Celular")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Disciplina")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documento")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EPS")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EquipoId")
                         .HasColumnType("int");
@@ -171,22 +146,16 @@ namespace Persistencia.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Genero")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombres")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NumeroEmergencia")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Rh")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -203,26 +172,19 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Apellidos")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documento")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EquipoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Genero")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombres")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -240,14 +202,10 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Disciplina")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PatrocinadorId")
                         .HasColumnType("int");
@@ -270,12 +228,9 @@ namespace Persistencia.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TorneoId")
@@ -299,9 +254,7 @@ namespace Persistencia.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -316,24 +269,18 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Celular")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Identificacion")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoPersona")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -349,9 +296,7 @@ namespace Persistencia.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaFinal")
                         .HasColumnType("datetime2");
@@ -366,9 +311,7 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
