@@ -82,6 +82,11 @@ namespace Persistencia
             return obj;
         }
 
+        public IEnumerable<TorneoEquipo> ListarTorneoEquipos(int torneoid)
+        {
+            return _appContext.TorneoEquipos.Where(te => te.TorneoId==torneoid);
+        }
+
 /*  
       public TorneoEquipo BuscarTorneoEquipo(int TorneoId, int EquipoId)
         {

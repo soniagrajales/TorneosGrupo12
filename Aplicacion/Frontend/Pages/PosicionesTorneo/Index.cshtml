@@ -1,0 +1,39 @@
+﻿@page
+@model Frontend.Pages.CPosicionesTorneo.IndexModel
+@{
+    ViewData["Title"]="Index";
+}
+
+<h1> Posiciones de los equipos en el torneo </h1>
+
+<table class="table">
+        <tr>
+            <td>
+                <!-- Este select se debe cargar con la lista de torneos de la bd -->
+                <select aria-colspan="3">
+                    <option>Torneo 1</option>
+                    <option>Torneo 1</option>
+                    <option>Torneo 1</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Equipo</th>     
+            <th>Posición</th>
+        </tr>
+
+    <tbody>
+        @foreach (var item in Model.TorneoEquiposV)
+        {
+            <tr>
+                <td>@item.Equipo </td>
+                <td>@item.Posicion</td>  
+                <td>    
+                    <!--<a asp-page="./Edit" asp-route-torneoid="@item.TorneoId" asp-route-equipoid="@item.EquipoId" class="btn btn-primary">Editar</a>-->
+                </td>
+            </tr>
+        }
+    </tbody>  
+</table>
+
