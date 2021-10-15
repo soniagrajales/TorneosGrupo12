@@ -46,6 +46,7 @@ namespace Frontend.Pages
             }
             else
             {
+                ViewData["Mensaje"]="No es posible eliminar registros con entidad referencial";
                 return Page();
             }
            
