@@ -23,15 +23,17 @@ namespace Frontend.Pages.CPosicionesTorneo
         }
 
         [BindProperty]
+        public TorneoEquipo TorneoEquipo{get;set;}
         public IEnumerable<TorneoEquipo> TorneoEquipos{get;set;}
+        public IEnumerable<Torneo> Torneos{get;set;}
         public List<TorneoEquipoView>TorneoEquiposV= new List<TorneoEquipoView>();
         public void OnGet()
         {
-            Console.Write("---- INDEX ----");
             List<Torneo> lstTorneos=_repotor.ListarTorneos1();
             List<Equipo> lstEquipos=_repoequ.ListarEquipos1();
             // el torneo id que irá como parámetro será el que se seleccione en la lista desplegable
-            TorneoEquipos=_repotorequ.ListarTorneoEquipos(1);
+            TorneoEquipos=_repotorequ.ListarTorneoEquipos();
+            Torneos=_repotor.ListarTorneos();
 
             TorneoEquipoView tev=null;
             foreach(var te in TorneoEquipos)

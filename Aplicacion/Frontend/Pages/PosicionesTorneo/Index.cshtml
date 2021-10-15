@@ -6,34 +6,42 @@
 
 <h1> Posiciones de los equipos en el torneo </h1>
 
-<table class="table">
-        <tr>
-            <td>
-                <!-- Este select se debe cargar con la lista de torneos de la bd -->
-                <select aria-colspan="3">
-                    <option>Torneo 1</option>
-                    <option>Torneo 1</option>
-                    <option>Torneo 1</option>
-                </select>
-            </td>
-        </tr>
+<select asp-for="TorneoEquipo.TorneoId" class="form-control" onchange="actualizar(this);">
+    <option value="">-- Seleccione un torneo--</option>
+    @foreach (var tor in Model.Torneos)
+    {
+        <option value="@tor.Id">@tor.Nombre</option>                                                        
+    }
+</select>
 
-        <tr>
-            <th>Equipo</th>     
-            <th>Posición</th>
-        </tr>
+<table class="table">
+    <tr class="text-center">
+        <th >Equipo</th>     
+        <th>Posición</th>
+    </tr>
 
     <tbody>
         @foreach (var item in Model.TorneoEquiposV)
         {
-            <tr>
-                <td>@item.Equipo </td>
-                <td>@item.Posicion</td>  
-                <td>    
-                    <!--<a asp-page="./Edit" asp-route-torneoid="@item.TorneoId" asp-route-equipoid="@item.EquipoId" class="btn btn-primary">Editar</a>-->
-                </td>
+            <tr class="item text-center" val="@item.TorneoId">
+                <td>@item.Equipo</td>
+                <td>@item.Posicion</td>
             </tr>
         }
     </tbody>  
 </table>
 
+@section Scripts{
+<script>
+    function actualizar(opcion){
+        var items = document.getElementsByClassName("item");
+        Array.prototype.filter.call(items, function(item) {
+            if(item.getAttribute('val') != opcion.value){
+                item.style.display = "none";
+            } else {
+                item.style.removeProperty("display");
+            }
+        });
+    }
+</script>
+}
