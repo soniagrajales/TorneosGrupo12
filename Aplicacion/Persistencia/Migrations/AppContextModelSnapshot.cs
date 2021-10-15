@@ -326,6 +326,9 @@ namespace Persistencia.Migrations
                     b.Property<int>("TorneoId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Posicion")
+                        .HasColumnType("int");
+
                     b.HasKey("EquipoId", "TorneoId");
 
                     b.HasIndex("TorneoId");
