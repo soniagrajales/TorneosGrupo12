@@ -41,6 +41,12 @@ namespace Persistencia
             return _appContext.TorneoEquipos;
         }
 
+        //se usa para ver las posiciones de los equipos en los torneos
+        public IEnumerable<TorneoEquipo> ListarTorneoEquiposOrdered()
+        {
+            return _appContext.TorneoEquipos.OrderBy(te => te.Posicion);
+        }
+
         bool ValidarNombre(TorneoEquipo obj)
         {
             bool valido= true;
@@ -81,12 +87,12 @@ namespace Persistencia
                                                                  && t.TorneoId==obj1.TorneoId);
             return obj;
         }
-
+/*
         public IEnumerable<TorneoEquipo> ListarTorneoEquipos(int torneoid)
         {
             return _appContext.TorneoEquipos.Where(te => te.TorneoId==torneoid);
         }
-
+*/
 /*  
       public TorneoEquipo BuscarTorneoEquipo(int TorneoId, int EquipoId)
         {

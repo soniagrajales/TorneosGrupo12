@@ -32,7 +32,7 @@ namespace Frontend.Pages.CPosicionesTorneo
             List<Torneo> lstTorneos=_repotor.ListarTorneos1();
             List<Equipo> lstEquipos=_repoequ.ListarEquipos1();
             // el torneo id que irá como parámetro será el que se seleccione en la lista desplegable
-            TorneoEquipos=_repotorequ.ListarTorneoEquipos();
+            TorneoEquipos=_repotorequ.ListarTorneoEquiposOrdered();
             Torneos=_repotor.ListarTorneos();
 
             TorneoEquipoView tev=null;
